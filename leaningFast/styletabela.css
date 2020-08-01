@@ -1,0 +1,70 @@
+body{
+  font-family:sans-serif;  
+}
+
+#minhaTabela {
+  width:100%;
+  margin:0 auto;
+  border:0;
+  box-shadow: 0 5px 30px darkgrey;
+  border-spacing: 0;
+
+}
+
+#minhaTabela thead th{
+  font-weight: bold;
+  background-color: black;
+  color:white;
+  padding:5px 10px;
+}
+
+#minhaTabela td{
+  padding: 15px 5px;
+  cursor: pointer;
+  text-align:center;
+}
+
+.false td{
+  background-color: black;
+  color: white;
+}
+
+.true td{
+  background-color: darkblue;
+  color: white;
+}
+
+#minhaTabela tr td:last-child{
+  text-align: right;
+}
+
+
+button#visualizarDados{
+  background-color: white;
+  border: 1px solid black;
+  width:50%;
+  margin: 10px auto;
+  padding:10px 0;
+  display: block;
+  color: black;
+}
+
+@media screen and (max-width: 1000px){
+  #minhaTabela{
+    width:99%;
+    margin:0 auto;
+    border:0;
+    box-shadow: 0 5px 30px darkgrey;
+    border-spacing: 0;
+    font-size: 3.6vw;
+  }
+
+  button#visualizarDados{
+    padding: 0 2em 0 2em;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+
+}

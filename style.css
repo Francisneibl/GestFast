@@ -1,0 +1,26 @@
+*{
+    margin:0; padding: 0; box-sizing: border-box;
+}
+
+.content {display: block; margin: auto;}
+
+.rTable{width: 100%; text-align: center;font-size: 2.1em;}
+    .rTable thead{background: black; font-weight: bold; color: white;}
+    
+.rTable tbody tr:nth-child(even) {
+        background: #ccc;
+}
+.rTable th , .rTable td{padding: 7px 0;}
+
+
+
+@media screen and (max-width: 480px){
+    .content{width: 94%;}
+
+    .rTable tbody td{display: flex}
+    .rTable{font-size: 20px}
+}
+
+@media only screen and (min-width:1200px){
+    .content{width:100%;}
+}

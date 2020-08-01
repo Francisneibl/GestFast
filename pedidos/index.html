@@ -1,0 +1,81 @@
+<!DOCTYPE html5>
+
+<html>
+    <head>
+        <meta charset="utf-8"></meta>
+        <title>Pedidos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="css/style.css"></link>
+        <link rel="stylesheet" href='css/bootstrap.min.css'></link>
+        <script src='scripts/jquery-3.5.1.min.js'></script>
+        <script src='scripts/bootstrap.min.js'></script>
+        <link rel="shortcut icon" href="images/carrinho.ico">
+        <link rel="icon" type="image/png" href="images/carrinho.ico">
+    </head>
+
+    <body>
+        <div class="my-2 mx-2">
+        <form method='post' action='' onsubmit="return false" id='form'>
+            <input type="text" id="search" placeholder="Pesquisar por..."/>
+            <input type="button" class='my-1' id="btn-search" value="PESQUISAR"/>
+        </form>
+        </div>
+        <div id='dados'></div>
+       
+
+    </body>
+
+    <script>
+        function buscar(palavra){
+            $.ajax({
+                type: 'POST',
+                dataType: 'html',
+                url: 'result.php',
+
+                beforeSend: function(){
+                    $('#dados').html("<image src='images/load-fundo.gif' width=60%'>");
+                },
+
+                data: {nome: palavra},
+
+                success: function(msg) {
+                    $('#search').val("");
+                    $('#dados').html(msg);
+                    
+                }
+            })
+        }
+
+        $('#btn-search').click(function() {
+            buscar($('#search').val())
+        });
+
+        $('#form').submit(function(){
+            buscar($('#search').val())
+        });
+    </script>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="modal-estatico" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Adicionar Produto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" >&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <label id='nome_produto'>Test</label>
+            <div class="form-group">
+              <input type="number" id='saldo' class="form-control" placeholder='Saldo Atual'/>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary" id='btn-inserir'>Adicionar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</html>

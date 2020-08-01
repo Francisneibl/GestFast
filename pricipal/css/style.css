@@ -1,0 +1,47 @@
+*{
+    margin: 0 auto;
+}
+
+.top-bar {
+    background-color: rgb(26, 8, 105);
+    display: flex;
+    align-items: center;
+}
+
+.top-bar button {
+    position: fixed;
+
+}
+
+image {
+    width: 10px;
+    height: 10px;
+}
+
+
+.drawer {
+    display: none;
+    width: 70vw;
+    height: 100%;
+    text-align:center;
+    background-color: black;
+    position: fixed;
+    z-index: 1000;
+}
+
+.drawer a{
+    background-color: rgba(34, 14, 148, 0.781);
+    color: white;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    margin: 2px;
+}
+
+#lock {
+    background-color: rgba(0,0,0,.4);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+}
